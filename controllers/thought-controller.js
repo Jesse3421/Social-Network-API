@@ -97,7 +97,7 @@ const thoughtController = {
               .select('-__v')
             .then(dbThoughtData => {
               if (!dbThoughtData) {
-                res.status(404).json({ message: 'No Thought found with this id!' });
+                res.status(404).json({ message: 'No reaction found with this id!' });
                 return;
               }
               res.json(dbThoughtData);
@@ -113,7 +113,7 @@ const thoughtController = {
                   { new: true })
                 .then(dbThoughtData => {
                   if (!dbThoughtData) {
-                    res.status(404).json({ message: 'No Thought found with this id!' });
+                    res.status(404).json({ message: 'No reaction found with this id!' });
                     return;
                   }
                   res.json(dbThoughtData);
