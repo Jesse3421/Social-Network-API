@@ -20,7 +20,7 @@ router
 router
     .route('/:id')
     .get(getThoughtById)
-    .create(createThought)
+    .post(createThought)
     .put(updateThought)
     .delete(deleteThought)
 

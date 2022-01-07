@@ -5,11 +5,11 @@ const userController = {
   getAllUser(req, res) {
     User.find({})
       .populate({
-        path: 'thoughts', //plural?
+        path: 'thoughts', 
         select: '-__v'
       })
       .populate({
-        path: 'friends', //plural?
+        path: 'friends', 
         select: '-__v'
       })
       .select('-__v')
@@ -77,7 +77,7 @@ const userController = {
 addFriend({ params }, res) {
     User.findOneAndUpdate(
         { _id: params.id }, 
-        { $push: {friends: params.friendId}}, 
+        { $push: { friends: params.friendId }}, 
         { new: true })
         .populate({
             path: 'friends',
@@ -99,7 +99,7 @@ addFriend({ params }, res) {
 deleteFriend({ params }, res) {
     User.findOneAndUpdate(
         { _id: params.id }, 
-        { $pull: {friends: params.friendId}}, 
+        { $pull: { friends: params.friendId }}, 
         { new: true })
         .populate({
             path: 'friends',
