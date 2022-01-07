@@ -74,10 +74,10 @@ const userController = {
     },
 
 //addFriend
-addFriend({ params }, res) {
+addFriend({ params, body }, res) {
     User.findOneAndUpdate(
         { _id: params.id }, 
-        { $push: { friends: params.friendId }}, 
+        { $push: { friends: _id }}, 
         { new: true })
         .populate({
             path: 'friends',
